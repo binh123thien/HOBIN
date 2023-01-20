@@ -1,14 +1,12 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:hobin_app/src/Header.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
+    debugShowCheckedModeBanner: false,
     home:MyApp(),
   ));
 }
-
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
@@ -20,7 +18,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: double.infinity,
         child: SingleChildScrollView(
@@ -35,7 +33,7 @@ class _MyAppState extends State<MyApp> {
                       )
                     ],
                   ),
-                  Header(),
+                  const Header(),
                 ],
               )
             ],
