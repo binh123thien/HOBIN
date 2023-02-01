@@ -33,10 +33,9 @@ class _SignInPageState extends State<SignInPage> {
               ResponsiveWidget.isSmallScreen(context)
                   ? const SizedBox()
                   : Expanded(
-                      child: Container(
+                      child: SizedBox(
                         width: screenWidth,
                         height: screenHeight,
-                        color: AppColors.purpleColor,
                         child: const Image(
                           image: AssetImage('assets/images/signin.png'),
                           fit:BoxFit.fill,
@@ -47,14 +46,33 @@ class _SignInPageState extends State<SignInPage> {
               Expanded(
                 child: Column(
                   children: [
-                    SizedBox(height: screenWidth *0.03),
+                    SizedBox(height: screenHeight *0.06),
                     Text(
-                      'USER SIGN IN',
+                      'USER SIGNIN',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
                           fontSize: 50, color: AppColors.purpleColor, fontWeight: FontWeight.w600),
 
-                    )
+                    ),
+                    Text(
+                      'Welcome to HOBIN',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.poppins(
+                          fontSize: 20, color: AppColors.purpleColor, fontWeight: FontWeight.w400),
+                    ),
+                    Padding(
+                      padding: ResponsiveWidget.isSmallScreen(context)?
+                      const EdgeInsets.fromLTRB(30,0,30,0):
+                      const EdgeInsets.fromLTRB(60,0,60,0),
+                      child: Container(
+                        height: 50.0,
+                        width: screenWidth,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50.0),
+                          color: AppColors.grayClolor,
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
