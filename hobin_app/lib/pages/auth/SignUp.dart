@@ -37,21 +37,28 @@ class _SignUpPageState extends State<SignUpPage> {
                         height: screen_height,
                         child: const Image(
                           image: AssetImage('assets/images/signin.png'),
+                          fit: BoxFit.fill,
                         ),
                       ),
                     ),
               //khi chạy full màn hình web
               Expanded(
-                child: Column(
-                  children: [
-                    Text(
-                      'USER SIGN IN',
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.poppins(
-                          fontSize: 50, color: AppColors.purpleColor),
-                    )
-                  ],
-                ),
+                child: Container(
+                    height: screen_height,
+                    margin: EdgeInsets.symmetric(
+                        horizontal: ResponsiveWidget.isSmallScreen(context)
+                            ? screen_height * 0.032
+                            : screen_height * 0.12),
+                    child: SingleChildScrollView(
+                        padding: const EdgeInsets.only(bottom: 40.0))
+                    //   Text(
+                    //     'USER SIGN IN',
+                    //     textAlign: TextAlign.center,
+                    //     style: GoogleFonts.poppins(
+                    //         fontSize: 50, color: AppColors.purpleColor),
+                    //   )
+                    // ],
+                    ),
               ),
             ]),
       ),
