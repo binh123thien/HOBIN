@@ -39,7 +39,7 @@ class _SignInPageState extends State<SignInPage> {
                         color: AppColors.purpleColor,
                         child: const Image(
                           image: AssetImage('assets/images/signin.png'),
-                          height: 1080,
+                          fit:BoxFit.fill,
                         ),
                       ),
                     ),
