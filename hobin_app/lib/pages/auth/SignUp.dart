@@ -21,7 +21,6 @@ class _SignUpPageState extends State<SignUpPage> {
               Image(
                 image: AssetImage('assets/images/signin.png'),
               ),
-              Text('pppppppppp'),
             ],
           ))
         ]),
