@@ -20,8 +20,9 @@ class _SignInPageState extends State<SignInPage> {
             children: const [
               Image(
                 image: AssetImage('assets/images/signin.png'),
+                width: 1080,
+                height: 1080,
               ),
-              Text('pppppppppp'),
             ],
           ))
         ]),
