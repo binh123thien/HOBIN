@@ -10,7 +10,7 @@ import 'pages/auth/signup.dart';
 void main() {
   runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: MyApp(),
+    home: SignUpPage(),
   ));
 }
 
@@ -42,8 +42,7 @@ class _MyAppState extends State<MyApp> {
                       child: Stack(
                         children: [
                           Transform(
-                            transform: Matrix4.rotationZ(pi / 6)
-                              ..translate(-180, 170),
+                            transform: Matrix4.rotationZ(pi / 6),
                             child: Container(
                               height: 350,
                               width: 700,
