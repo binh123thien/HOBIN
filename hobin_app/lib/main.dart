@@ -44,6 +44,21 @@ class _MyAppState extends State<MyApp> {
                           Transform(
                             transform: Matrix4.rotationZ(pi / 6),
                             child: Container(
+          child: Column(
+            children: [
+              Stack(
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        height: 600,
+                        width: MediaQuery.of(context).size.width*0.45,
+                        color: Colors.white,
+                        child: Stack(
+                          children: [
+                            Transform(
+                              transform: Matrix4.rotationZ(pi/6),
+                              child: Container(
                               height: 350,
                               width: 700,
                               decoration: BoxDecoration(
