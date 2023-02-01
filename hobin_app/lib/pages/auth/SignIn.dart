@@ -72,11 +72,13 @@ class _SignInPageState extends State<SignInPage> {
                           color: AppColors.grayClolor,
                         ),
                         child: TextFormField(
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             border: InputBorder.none,
                             prefixIcon: IconButton(
-                              onPressed: (){},
-                              icon: Image.asset(AppIcons.userIcon),
+                              onPressed: null,
+                              icon:  Image( image: AssetImage(AppIcons.userIcon),
+                              fit: BoxFit.fill,
+                              ),
                             ),
                           ),
                         ),
