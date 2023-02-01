@@ -16,12 +16,12 @@ class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     // set chiều cao, ngang full màn hình
-    double screen_height = MediaQuery.of(context).size.height;
-    double screen_width = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SizedBox(
-        height: screen_height,
-        width: screen_width,
+        height: screenHeight,
+        width: screenWidth,
         //sắp xếp các widget theo chiều ngang
         child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -34,9 +34,12 @@ class _SignInPageState extends State<SignInPage> {
                   ? const SizedBox()
                   : Expanded(
                       child: Container(
-                        height: screen_height,
+                        width: screenWidth,
+                        height: screenHeight,
+                        color: AppColors.purpleColor,
                         child: const Image(
                           image: AssetImage('assets/images/signin.png'),
+                          height: 1080,
                         ),
                       ),
                     ),
@@ -44,11 +47,13 @@ class _SignInPageState extends State<SignInPage> {
               Expanded(
                 child: Column(
                   children: [
+                    SizedBox(height: screenWidth *0.03),
                     Text(
                       'USER SIGN IN',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
-                          fontSize: 50, color: AppColors.purpleColor),
+                          fontSize: 50, color: AppColors.purpleColor, fontWeight: FontWeight.w600),
+
                     )
                   ],
                 ),
