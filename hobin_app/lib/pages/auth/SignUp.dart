@@ -26,14 +26,15 @@ class _SignUpPageState extends State<SignUpPage> {
         child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+            children: <Widget>[
               //toán tử 3 ngôi: chia trang theo chiều ngang < 600 pixels
               //đúng thì trả sizebox rỗng, chạy dòng 39 (expanded thứ 2)
               //sai do full màn hình web chạy hình ảnh
               ResponsiveWidget.isSmallScreen(context)
                   ? const SizedBox()
                   : Expanded(
-                      child: Container(
+                      child: SizedBox(
+                        width: screen_width,
                         height: screen_height,
                         child: const Image(
                           image: AssetImage('assets/images/signin.png'),
@@ -43,22 +44,35 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
               //khi chạy full màn hình web
               Expanded(
-                child: Container(
-                    height: screen_height,
-                    margin: EdgeInsets.symmetric(
-                        horizontal: ResponsiveWidget.isSmallScreen(context)
-                            ? screen_height * 0.032
-                            : screen_height * 0.12),
-                    child: SingleChildScrollView(
-                        padding: const EdgeInsets.only(bottom: 40.0))
-                    //   Text(
-                    //     'USER SIGN IN',
-                    //     textAlign: TextAlign.center,
-                    //     style: GoogleFonts.poppins(
-                    //         fontSize: 50, color: AppColors.purpleColor),
-                    //   )
-                    // ],
+                child: Column(
+                  children: [
+                    SizedBox(height: screen_height * 0.06),
+                    Text(
+                      'USER SIGNUP',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.poppins(
+                          fontSize: 50,
+                          color: AppColors.purpleColor,
+                          fontWeight: FontWeight.w600),
                     ),
+                    Text(
+                      'Welcome to HOBIN',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.poppins(
+                          fontSize: 20,
+                          color: AppColors.purpleColor,
+                          fontWeight: FontWeight.w400),
+                    ),
+                    Container(
+                      height: 50.0,
+                      width: screen_width,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50.0),
+                        color: AppColors.grayClolor,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ]),
       ),
