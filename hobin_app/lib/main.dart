@@ -8,6 +8,6 @@ void main() {
   runApp(const MaterialApp(
     title: 'Hobin',
     debugShowCheckedModeBanner: false,
-    home: const SignUpPage(),
+    home: const SignInPage(),
   ));
 }

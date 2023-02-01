@@ -14,21 +14,17 @@ class _SignInPageState extends State<SignInPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SizedBox(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 40, 0, 0),
-                child: Image.asset(
-                  'assets/singin.png',
-                  width: 260,
-                  height: 150,
-                ),
+        child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+          SizedBox(
+              child: Column(
+            children: const [
+              Image(
+                image: AssetImage('assets/images/signin.png'),
               ),
-            ),
-          ],
-        ),
+              Text('pppppppppp'),
+            ],
+          ))
+        ]),
       ),
     );
   }
