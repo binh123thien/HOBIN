@@ -5,6 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hobin_app/responsive_widget.dart';
 import 'package:hobin_app/common_object/app_colors.dart';
 
+import '../../common_object/app_icons.dart';
+
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
 
@@ -32,26 +34,24 @@ class _SignInPageState extends State<SignInPage> {
               //sai do full màn hình web chạy hình ảnh
               ResponsiveWidget.isSmallScreen(context)
                   ? const SizedBox()
-                  : Expanded(
-                      child: SizedBox(
-                        width: screenWidth,
-                        height: screenHeight,
-                        child: const Image(
-                          image: AssetImage('assets/images/signin.png'),
-                          fit:BoxFit.fill,
-                        ),
-                      ),
+                  : SizedBox(
+                    width: screenWidth*0.5625,
+                    height: screenHeight,
+                    child: const Image(
+                      image: AssetImage('assets/images/signin.png'),
+                      fit:BoxFit.fill,
                     ),
+                  ),
               //khi chạy full màn hình web
               Expanded(
                 child: Column(
                   children: [
-                    SizedBox(height: screenHeight *0.06),
+                    SizedBox(height: screenHeight *0.1435),
                     Text(
                       'USER SIGNIN',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
-                          fontSize: 50, color: AppColors.purpleColor, fontWeight: FontWeight.w600),
+                          fontSize: 40, color: AppColors.purpleColor, fontWeight: FontWeight.w600),
 
                     ),
                     Text(
@@ -62,14 +62,23 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                     Padding(
                       padding: ResponsiveWidget.isSmallScreen(context)?
-                      const EdgeInsets.fromLTRB(30,0,30,0):
-                      const EdgeInsets.fromLTRB(60,0,60,0),
+                      const EdgeInsets.fromLTRB(30,20,30,0):
+                      const EdgeInsets.fromLTRB(60,20,60,0),
                       child: Container(
                         height: 50.0,
                         width: screenWidth,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50.0),
                           color: AppColors.grayClolor,
+                        ),
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            prefixIcon: IconButton(
+                              onPressed: (){},
+                              icon: Image.asset(AppIcons.userIcon),
+                            ),
+                          ),
                         ),
                       ),
                     ),
