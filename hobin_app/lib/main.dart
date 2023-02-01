@@ -1,16 +1,12 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'pages/auth/signup.dart';
-import 'responsive_widget.dart';
+import 'package:hobin_app/pages/auth/SignIn.dart';
+import 'dart:ui';
 
 void main() {
   runApp(const MaterialApp(
+    title: 'Hobin',
     debugShowCheckedModeBanner: false,
-    home: SignUpPage(title: 'Sign Up',),
+    home: const SignInPage(),
   ));
 }
-
-
