@@ -75,7 +75,7 @@ class _SignInPageState extends State<SignInPage> {
                           color: AppColors.grayClolor,
                         ),
                         child: Container(
-                          margin: const EdgeInsets.fromLTRB(15, 0, 0, 0),
+                          margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
                           child: TextFormField(
                             decoration: const InputDecoration(
                                 border: InputBorder.none,
@@ -86,12 +86,14 @@ class _SignInPageState extends State<SignInPage> {
                                     fit: BoxFit.fill,
                                   ),
                                 ),
-                                contentPadding: EdgeInsets.only(top: 16.0),
-                                hintText: 'Enter Email',
+                                contentPadding: EdgeInsets.only(top: 14),
+                                hintText: 'Username',
                                 hintStyle: TextStyle(
-                                  fontSize: 12,
-                                  color: Color.fromARGB(255, 251, 255, 0),
-                                )),
+                                  fontSize: 16,
+                                  color: AppColors.hintColor,
+                                  fontFamily: 'poppins',
+                                ),
+                            ),
                           ),
                         ),
                       ),
