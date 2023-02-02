@@ -80,6 +80,12 @@ class _SignInPageState extends State<SignInPage> {
                               fit: BoxFit.fill,
                               ),
                             ),
+                            contentPadding: EdgeInsets.only(top: 16.0),
+                            hintText: 'Enter Email',
+                            hintStyle: TextStyle(
+                              fontSize: 12,
+                              color: Color.fromARGB(255, 251, 255, 0),
+                            )
                           ),
                         ),
                       ),
