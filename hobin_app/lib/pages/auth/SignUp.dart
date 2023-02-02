@@ -14,14 +14,15 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  //khai báo trên override có thể thay đổi biến showpass
+  //khai báo con mắt
+  bool showpass = false;
   @override
+  // khai báo dưới override biến ko thay đổi
   Widget build(BuildContext context) {
     // set chiều cao, ngang full màn hình
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
-
-    //khai báo con mắt
-    bool showpass = false;
     return Scaffold(
       body: SizedBox(
         height: screenHeight,
