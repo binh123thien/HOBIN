@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 // import 'package:flutter/src/widgets/framework.dart';
 import 'package:hobin_app/common_object/app_colors.dart';
 import 'package:hobin_app/responsive_widget.dart';
+import '../../common_object/app_icons.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -16,42 +17,40 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     // set chiều cao, ngang full màn hình
-    double screen_height = MediaQuery.of(context).size.height;
-    double screen_width = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SizedBox(
-        height: screen_height,
-        width: screen_width,
+        height: screenHeight,
+        width: screenWidth,
         //sắp xếp các widget theo chiều ngang
         child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
+            children: [
               //toán tử 3 ngôi: chia trang theo chiều ngang < 600 pixels
               //đúng thì trả sizebox rỗng, chạy dòng 39 (expanded thứ 2)
               //sai do full màn hình web chạy hình ảnh
               ResponsiveWidget.isSmallScreen(context)
                   ? const SizedBox()
-                  : Expanded(
-                      child: SizedBox(
-                        width: screen_width,
-                        height: screen_height,
-                        child: const Image(
-                          image: AssetImage('assets/images/signup.png'),
-                          fit: BoxFit.fill,
-                        ),
+                  : SizedBox(
+                      width: screenWidth * 0.5625,
+                      height: screenHeight,
+                      child: const Image(
+                        image: AssetImage('assets/images/signup.png'),
+                        fit: BoxFit.fill,
                       ),
                     ),
               //khi chạy full màn hình web
               Expanded(
                 child: Column(
                   children: [
-                    SizedBox(height: screen_height * 0.06),
+                    SizedBox(height: screenHeight * 0.1435),
                     Text(
                       'USER SIGNUP',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
-                          fontSize: 50,
+                          fontSize: 40,
                           color: AppColors.purpleColor,
                           fontWeight: FontWeight.w600),
                     ),
@@ -63,14 +62,79 @@ class _SignUpPageState extends State<SignUpPage> {
                           color: AppColors.purpleColor,
                           fontWeight: FontWeight.w400),
                     ),
-                    Container(
-                      height: 50.0,
-                      width: screen_width,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50.0),
-                        color: AppColors.grayClolor,
+                    Padding(
+                      padding: ResponsiveWidget.isSmallScreen(context)
+                          ? const EdgeInsets.fromLTRB(30, 20, 30, 0)
+                          : const EdgeInsets.fromLTRB(60, 20, 60, 0),
+                      child: Container(
+                        height: 50.0,
+                        width: screenWidth,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50.0),
+                          color: AppColors.grayClolor,
+                        ),
+                        child: Container(
+                          margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                              prefixIcon: IconButton(
+                                onPressed: null,
+                                icon: Image(
+                                  image: AssetImage(AppIcons.userIcon),
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                              contentPadding: EdgeInsets.only(top: 14),
+                              hintText: 'Username',
+                              hintStyle: TextStyle(
+                                fontSize: 16,
+                                color: AppColors.hintColor,
+                                fontFamily: 'poppins',
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
                     ),
+
+                    // ========================= EMAIL ===========================
+                    Padding(
+                      padding: ResponsiveWidget.isSmallScreen(context)
+                          ? const EdgeInsets.fromLTRB(30, 20, 30, 0)
+                          : const EdgeInsets.fromLTRB(60, 20, 60, 0),
+                      child: Container(
+                        height: 50.0,
+                        width: screenWidth,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50.0),
+                          color: AppColors.grayClolor,
+                        ),
+                        child: Container(
+                          margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                              prefixIcon: IconButton(
+                                onPressed: null,
+                                icon: Image(
+                                  image: AssetImage(AppIcons.EmailIcon),
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                              contentPadding: EdgeInsets.only(top: 14),
+                              hintText: 'Email',
+                              hintStyle: TextStyle(
+                                fontSize: 16,
+                                color: AppColors.hintColor,
+                                fontFamily: 'poppins',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    //============================================================================
                   ],
                 ),
               ),
