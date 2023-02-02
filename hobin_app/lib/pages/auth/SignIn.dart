@@ -4,6 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 // import 'package:flutter/src/widgets/framework.dart';
 import 'package:hobin_app/responsive_widget.dart';
 import 'package:hobin_app/common_object/app_colors.dart';
+//chuyển trang
+import 'package:flutter/gestures.dart';
+import 'package:hobin_app/pages/auth/SignUp.dart';
 
 import '../../common_object/app_icons.dart';
 
@@ -21,6 +24,7 @@ class _SignInPageState extends State<SignInPage> {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SizedBox(
         height: screenHeight,
         width: screenWidth,
@@ -79,22 +83,22 @@ class _SignInPageState extends State<SignInPage> {
                           margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
                           child: TextFormField(
                             decoration: const InputDecoration(
-                                border: InputBorder.none,
-                                prefixIcon: IconButton(
-                                  onPressed: null,
-                                  icon: Image(
-                                    image: AssetImage(AppIcons.userIcon),
-                                    fit: BoxFit.fill,
-                                    width: 27,
-                                  ),
+                              border: InputBorder.none,
+                              prefixIcon: IconButton(
+                                onPressed: null,
+                                icon: Image(
+                                  image: AssetImage(AppIcons.userIcon),
+                                  fit: BoxFit.fill,
+                                  width: 27,
                                 ),
-                                contentPadding: EdgeInsets.only(top: 14),
-                                hintText: 'Username',
-                                hintStyle: TextStyle(
-                                  fontSize: 16,
-                                  color: AppColors.hintColor,
-                                  fontFamily: 'poppins',
-                                ),
+                              ),
+                              contentPadding: EdgeInsets.only(top: 14),
+                              hintText: 'Username',
+                              hintStyle: TextStyle(
+                                fontSize: 16,
+                                color: AppColors.hintColor,
+                                fontFamily: 'poppins',
+                              ),
                             ),
                           ),
                         ),
@@ -116,22 +120,22 @@ class _SignInPageState extends State<SignInPage> {
                           margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
                           child: TextFormField(
                             decoration: const InputDecoration(
-                                border: InputBorder.none,
-                                prefixIcon: IconButton(
-                                  onPressed: null,
-                                  icon: Image(
-                                    image: AssetImage(AppIcons.padLockIcon),
-                                    fit: BoxFit.fill,
-                                    width: 27,
-                                  ),
+                              border: InputBorder.none,
+                              prefixIcon: IconButton(
+                                onPressed: null,
+                                icon: Image(
+                                  image: AssetImage(AppIcons.padLockIcon),
+                                  fit: BoxFit.fill,
+                                  width: 27,
                                 ),
-                                contentPadding: EdgeInsets.only(top: 14),
-                                hintText: 'Password',
-                                hintStyle: TextStyle(
-                                  fontSize: 16,
-                                  color: AppColors.hintColor,
-                                  fontFamily: 'poppins',
-                                ),
+                              ),
+                              contentPadding: EdgeInsets.only(top: 14),
+                              hintText: 'Password',
+                              hintStyle: TextStyle(
+                                fontSize: 16,
+                                color: AppColors.hintColor,
+                                fontFamily: 'poppins',
+                              ),
                             ),
                           ),
                         ),
@@ -141,23 +145,24 @@ class _SignInPageState extends State<SignInPage> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(30, 60, 30, 30),
                       child: SizedBox(
-                        width: ResponsiveWidget.isSmallScreen(context)? 250 : screenWidth * 0.1839,
-                        height: ResponsiveWidget.isSmallScreen(context)? 50 : screenHeight * 0.089,
+                        width: ResponsiveWidget.isSmallScreen(context)
+                            ? 250
+                            : screenWidth * 0.1839,
+                        height: ResponsiveWidget.isSmallScreen(context)
+                            ? 50
+                            : screenHeight * 0.089,
                         child: ElevatedButton(
-                          onPressed: (){},
+                          onPressed: () {},
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColors.purpleColor,
-                            shape:  RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(50),
-                            )
-                          ), 
-                          child: Text(
-                            'SIGNIN',
-                            style: GoogleFonts.poppins(
-                              fontSize: 20,
-                              color: AppColors.whiteColor,
-                              fontWeight: FontWeight.w600)
-                          ),
+                              backgroundColor: AppColors.purpleColor,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(50),
+                              )),
+                          child: Text('SIGNIN',
+                              style: GoogleFonts.poppins(
+                                  fontSize: 20,
+                                  color: AppColors.whiteColor,
+                                  fontWeight: FontWeight.w600)),
                         ),
                       ),
                     ),
@@ -166,12 +171,32 @@ class _SignInPageState extends State<SignInPage> {
                       padding: const EdgeInsets.fromLTRB(30, 30, 30, 30),
                       child: RichText(
                         text: TextSpan(
-                          text:'Do not have an account?',
+                          text: 'Do not have an account?',
                           style: GoogleFonts.poppins(
                             fontSize: 16,
                             color: AppColors.textColor,
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w500,
                           ),
+                          children: [
+                            TextSpan(
+                              text: ' Sign Up',
+                              style: GoogleFonts.poppins(
+                                  fontSize: 16,
+                                  color: AppColors.purpleColor,
+                                  fontWeight: FontWeight.w600),
+                              //chuyển trang
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  setState(() {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                SignUpPage()));
+                                  });
+                                },
+                            ),
+                          ],
                         ),
                       ),
                     ),
