@@ -161,6 +161,9 @@ class _SignInPageState extends State<SignInPage> {
                         ),
                       ),
                     )
+                    //====================TITLE===============================
+                    // Padding(
+                    //   padding: const EdgeInsets.fromLTRB(30, 30, 30, 30))
                   ],
                 ),
               ),
