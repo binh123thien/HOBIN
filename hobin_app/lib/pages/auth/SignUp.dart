@@ -19,6 +19,9 @@ class _SignUpPageState extends State<SignUpPage> {
     // set chiều cao, ngang full màn hình
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
+
+    //khai báo con mắt
+    bool showpass = false;
     return Scaffold(
       body: SizedBox(
         height: screenHeight,
@@ -134,7 +137,65 @@ class _SignUpPageState extends State<SignUpPage> {
                         ),
                       ),
                     ),
-                    //============================================================================
+                    //============================PassWord================================================
+                    Padding(
+                      padding: ResponsiveWidget.isSmallScreen(context)
+                          ? const EdgeInsets.fromLTRB(30, 20, 30, 0)
+                          : const EdgeInsets.fromLTRB(60, 20, 60, 0),
+                      child: Container(
+                        height: 50.0,
+                        width: screenWidth,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50.0),
+                          color: AppColors.grayClolor,
+                        ),
+                        child: Stack(
+                          alignment: AlignmentDirectional.centerEnd,
+                          children: [
+                            TextFormField(
+                              decoration: const InputDecoration(
+                                border: InputBorder.none,
+                                prefixIcon: IconButton(
+                                  onPressed: null,
+                                  icon: Image(
+                                    image: AssetImage(AppIcons.padLockIcon),
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
+                                contentPadding: EdgeInsets.only(top: 14),
+                                hintText: 'Password',
+                                hintStyle: TextStyle(
+                                  fontSize: 16,
+                                  color: AppColors.hintColor,
+                                  fontFamily: 'poppins',
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(0, 10, 10, 0),
+                              child: TextFormField(
+                                obscureText: showpass,
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  suffixIcon: IconButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        showpass = !showpass;
+                                      });
+                                    },
+                                    icon: Image(
+                                      image: showpass
+                                          ? AssetImage(AppIcons.hiddenEye)
+                                          : AssetImage(AppIcons.Eye),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
