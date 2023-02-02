@@ -37,7 +37,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         width: screen_width,
                         height: screen_height,
                         child: const Image(
-                          image: AssetImage('assets/images/signin.png'),
+                          image: AssetImage('assets/images/signup.png'),
                           fit: BoxFit.fill,
                         ),
                       ),
