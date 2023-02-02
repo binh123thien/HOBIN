@@ -141,8 +141,8 @@ class _SignInPageState extends State<SignInPage> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(30, 60, 30, 30),
                       child: SizedBox(
-                        width: double.infinity,
-                        height: 50,
+                        width: ResponsiveWidget.isSmallScreen(context)? 250 : screenWidth * 0.1839,
+                        height: ResponsiveWidget.isSmallScreen(context)? 50 : screenHeight * 0.089,
                         child: ElevatedButton(
                           onPressed: (){},
                           style: ElevatedButton.styleFrom(
@@ -154,7 +154,7 @@ class _SignInPageState extends State<SignInPage> {
                           child: Text(
                             'SIGNIN',
                             style: GoogleFonts.poppins(
-                              fontSize: 16,
+                              fontSize: 20,
                               color: AppColors.whiteColor,
                               fontWeight: FontWeight.w600)
                           ),
