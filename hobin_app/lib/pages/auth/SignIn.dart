@@ -18,6 +18,7 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
+  bool showpass = false;
   @override
   Widget build(BuildContext context) {
     // set chiều cao, ngang full màn hình
@@ -95,7 +96,7 @@ class _SignInPageState extends State<SignInPage> {
                               contentPadding: EdgeInsets.only(top: 14),
                               hintText: 'Username',
                               hintStyle: TextStyle(
-                                fontSize: 16,
+                                fontSize: 17,
                                 color: AppColors.hintColor,
                                 fontFamily: 'poppins',
                               ),
@@ -104,7 +105,7 @@ class _SignInPageState extends State<SignInPage> {
                         ),
                       ),
                     ),
-                    //====================PASS WORD===========================
+                    //====================PASSWORD===========================
                     Padding(
                       padding: ResponsiveWidget.isSmallScreen(context)
                           ? const EdgeInsets.fromLTRB(30, 20, 30, 0)
@@ -117,11 +118,24 @@ class _SignInPageState extends State<SignInPage> {
                           color: AppColors.grayClolor,
                         ),
                         child: Container(
-                          margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                           child: TextFormField(
-                            decoration: const InputDecoration(
+                            obscureText: showpass,
+                            decoration: InputDecoration(
                               border: InputBorder.none,
-                              prefixIcon: IconButton(
+                              suffixIcon: IconButton(
+                                onPressed: () {
+                                      setState(() {
+                                        showpass = !showpass;
+                                      });
+                                    },
+                                icon: Image(
+                                  image: showpass
+                                      ? const AssetImage(AppIcons.hiddenEye)
+                                      : const AssetImage(AppIcons.Eye),
+                                ),
+                              ),
+                              prefixIcon: const IconButton(
                                 onPressed: null,
                                 icon: Image(
                                   image: AssetImage(AppIcons.padLockIcon),
@@ -129,10 +143,10 @@ class _SignInPageState extends State<SignInPage> {
                                   width: 27,
                                 ),
                               ),
-                              contentPadding: EdgeInsets.only(top: 14),
+                              contentPadding: const EdgeInsets.only(top: 14),
                               hintText: 'Password',
-                              hintStyle: TextStyle(
-                                fontSize: 16,
+                              hintStyle: const TextStyle(
+                                fontSize: 17,
                                 color: AppColors.hintColor,
                                 fontFamily: 'poppins',
                               ),
