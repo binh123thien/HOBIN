@@ -160,10 +160,21 @@ class _SignInPageState extends State<SignInPage> {
                           ),
                         ),
                       ),
-                    )
+                    ),
                     //====================TITLE===============================
-                    // Padding(
-                    //   padding: const EdgeInsets.fromLTRB(30, 30, 30, 30))
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(30, 30, 30, 30),
+                      child: RichText(
+                        text: TextSpan(
+                          text:'Do not have an account?',
+                          style: GoogleFonts.poppins(
+                            fontSize: 16,
+                            color: AppColors.textColor,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
