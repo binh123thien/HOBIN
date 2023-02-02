@@ -35,35 +35,38 @@ class _SignInPageState extends State<SignInPage> {
               ResponsiveWidget.isSmallScreen(context)
                   ? const SizedBox()
                   : SizedBox(
-                    width: screenWidth*0.5625,
-                    height: screenHeight,
-                    child: const Image(
-                      image: AssetImage('assets/images/signin.png'),
-                      fit:BoxFit.fill,
+                      width: screenWidth * 0.5625,
+                      height: screenHeight,
+                      child: const Image(
+                        image: AssetImage('assets/images/signin.png'),
+                        fit: BoxFit.fill,
+                      ),
                     ),
-                  ),
               //khi chạy full màn hình web
               Expanded(
                 child: Column(
                   children: [
-                    SizedBox(height: screenHeight *0.1435),
+                    SizedBox(height: screenHeight * 0.1435),
                     Text(
                       'USER SIGNIN',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
-                          fontSize: 40, color: AppColors.purpleColor, fontWeight: FontWeight.w600),
-
+                          fontSize: 40,
+                          color: AppColors.purpleColor,
+                          fontWeight: FontWeight.w600),
                     ),
                     Text(
                       'Welcome to HOBIN',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
-                          fontSize: 20, color: AppColors.purpleColor, fontWeight: FontWeight.w400),
+                          fontSize: 20,
+                          color: AppColors.purpleColor,
+                          fontWeight: FontWeight.w400),
                     ),
                     Padding(
-                      padding: ResponsiveWidget.isSmallScreen(context)?
-                      const EdgeInsets.fromLTRB(30,20,30,0):
-                      const EdgeInsets.fromLTRB(60,20,60,0),
+                      padding: ResponsiveWidget.isSmallScreen(context)
+                          ? const EdgeInsets.fromLTRB(30, 20, 30, 0)
+                          : const EdgeInsets.fromLTRB(60, 20, 60, 0),
                       child: Container(
                         height: 50.0,
                         width: screenWidth,
@@ -71,21 +74,24 @@ class _SignInPageState extends State<SignInPage> {
                           borderRadius: BorderRadius.circular(50.0),
                           color: AppColors.grayClolor,
                         ),
-                        child: TextFormField(
-                          decoration: const InputDecoration(
-                            border: InputBorder.none,
-                            prefixIcon: IconButton(
-                              onPressed: null,
-                              icon:  Image( image: AssetImage(AppIcons.userIcon),
-                              fit: BoxFit.fill,
-                              ),
-                            ),
-                            contentPadding: EdgeInsets.only(top: 16.0),
-                            hintText: 'Enter Email',
-                            hintStyle: TextStyle(
-                              fontSize: 15,
-                              color: Color.fromARGB(255, 102, 102, 102),
-                            )
+                        child: Container(
+                          margin: const EdgeInsets.fromLTRB(15, 0, 0, 0),
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                                border: InputBorder.none,
+                                prefixIcon: IconButton(
+                                  onPressed: null,
+                                  icon: Image(
+                                    image: AssetImage(AppIcons.userIcon),
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
+                                contentPadding: EdgeInsets.only(top: 16.0),
+                                hintText: 'Enter Email',
+                                hintStyle: TextStyle(
+                                  fontSize: 12,
+                                  color: Color.fromARGB(255, 251, 255, 0),
+                                )),
                           ),
                         ),
                       ),
