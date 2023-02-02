@@ -63,6 +63,44 @@ class _SignInPageState extends State<SignInPage> {
                           color: AppColors.purpleColor,
                           fontWeight: FontWeight.w400),
                     ),
+                    //====================USER NAME===========================
+                    Padding(
+                      padding: ResponsiveWidget.isSmallScreen(context)
+                          ? const EdgeInsets.fromLTRB(30, 50, 30, 0)
+                          : const EdgeInsets.fromLTRB(60, 20, 60, 0),
+                      child: Container(
+                        height: 50.0,
+                        width: screenWidth,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50.0),
+                          color: AppColors.grayClolor,
+                        ),
+                        child: Container(
+                          margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                                border: InputBorder.none,
+                                prefixIcon: IconButton(
+                                  onPressed: null,
+                                  icon: Image(
+                                    image: AssetImage(AppIcons.userIcon),
+                                    fit: BoxFit.fill,
+                                    width: 27,
+                                  ),
+                                ),
+                                contentPadding: EdgeInsets.only(top: 14),
+                                hintText: 'Username',
+                                hintStyle: TextStyle(
+                                  fontSize: 16,
+                                  color: AppColors.hintColor,
+                                  fontFamily: 'poppins',
+                                ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    //====================PASS WORD===========================
                     Padding(
                       padding: ResponsiveWidget.isSmallScreen(context)
                           ? const EdgeInsets.fromLTRB(30, 20, 30, 0)
@@ -82,12 +120,13 @@ class _SignInPageState extends State<SignInPage> {
                                 prefixIcon: IconButton(
                                   onPressed: null,
                                   icon: Image(
-                                    image: AssetImage(AppIcons.userIcon),
+                                    image: AssetImage(AppIcons.padLockIcon),
                                     fit: BoxFit.fill,
+                                    width: 27,
                                   ),
                                 ),
                                 contentPadding: EdgeInsets.only(top: 14),
-                                hintText: 'Username',
+                                hintText: 'Password',
                                 hintStyle: TextStyle(
                                   fontSize: 16,
                                   color: AppColors.hintColor,
