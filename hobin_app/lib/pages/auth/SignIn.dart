@@ -137,6 +137,30 @@ class _SignInPageState extends State<SignInPage> {
                         ),
                       ),
                     ),
+                    //====================SIGN IN=============================
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(30, 60, 30, 30),
+                      child: SizedBox(
+                        width: double.infinity,
+                        height: 50,
+                        child: ElevatedButton(
+                          onPressed: (){},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: AppColors.purpleColor,
+                            shape:  RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(50),
+                            )
+                          ), 
+                          child: Text(
+                            'SIGNIN',
+                            style: GoogleFonts.poppins(
+                              fontSize: 16,
+                              color: AppColors.whiteColor,
+                              fontWeight: FontWeight.w600)
+                          ),
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
