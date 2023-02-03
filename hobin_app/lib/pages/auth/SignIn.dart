@@ -19,6 +19,7 @@ class SignInPage extends StatefulWidget {
 
 class _SignInPageState extends State<SignInPage> {
   bool showpass = false;
+  bool checkBoxRemember = false;
   @override
   Widget build(BuildContext context) {
     // set chiều cao, ngang full màn hình
@@ -126,10 +127,10 @@ class _SignInPageState extends State<SignInPage> {
                               //con mat
                               suffixIcon: IconButton(
                                 onPressed: () {
-                                      setState(() {
-                                        showpass = !showpass;
-                                      });
-                                    },
+                                  setState(() {
+                                    showpass = !showpass;
+                                  });
+                                },
                                 icon: Image(
                                   image: showpass
                                       ? const AssetImage(AppIcons.hiddenEye)
@@ -157,6 +158,57 @@ class _SignInPageState extends State<SignInPage> {
                         ),
                       ),
                     ),
+                    //====================Checkbox Remember===================
+                    Padding(
+                      padding: ResponsiveWidget.isSmallScreen(context)
+                          ? const EdgeInsets.fromLTRB(30, 20, 30, 0)
+                          : const EdgeInsets.fromLTRB(60, 20, 60, 0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Checkbox(
+                                  value: checkBoxRemember,
+                                  onChanged: (bool? value) {
+                                    setState(() {
+                                      checkBoxRemember = value!;
+                                    });
+                                  }),
+                              Text('1'),
+                              Text('22222222222222'),
+                            ],
+                          ),
+                          RichText(
+                              text: TextSpan(
+                            text: 'Forgot PassWord?',
+                            style: GoogleFonts.poppins(
+                              fontSize: 17,
+                              color: AppColors.textColor,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                setState(() {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const SignUpPage()));
+                                });
+                              },
+                          )),
+                          // Text(
+                          //   'Forgot PassWord?',
+                          //   style: GoogleFonts.poppins(
+                          //     fontSize: 17,
+                          //     color: AppColors.textColor,
+                          //     fontWeight: FontWeight.w500,
+                          //   ),
+                          // ),
+                        ],
+                      ),
+                    ),
                     //====================SIGN IN=============================
                     Padding(
                       padding: const EdgeInsets.fromLTRB(30, 60, 30, 30),
@@ -182,7 +234,7 @@ class _SignInPageState extends State<SignInPage> {
                         ),
                       ),
                     ),
-                    //====================TITLE===============================
+                    //====================Route SignUP===============================
                     Padding(
                       padding: const EdgeInsets.fromLTRB(30, 30, 30, 30),
                       child: RichText(

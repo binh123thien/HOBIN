@@ -27,6 +27,7 @@ class _SignUpPageState extends State<SignUpPage> {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SizedBox(
         height: screenHeight,
         width: screenWidth,
@@ -164,10 +165,10 @@ class _SignUpPageState extends State<SignUpPage> {
                               //con mat
                               suffixIcon: IconButton(
                                 onPressed: () {
-                                      setState(() {
-                                        showpass = !showpass;
-                                      });
-                                    },
+                                  setState(() {
+                                    showpass = !showpass;
+                                  });
+                                },
                                 icon: Image(
                                   image: showpass
                                       ? const AssetImage(AppIcons.hiddenEye)
@@ -199,7 +200,8 @@ class _SignUpPageState extends State<SignUpPage> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(30, 60, 30, 30),
                       child: SizedBox(
-                        width: ResponsiveWidget.isSmallScreen(context)? 250
+                        width: ResponsiveWidget.isSmallScreen(context)
+                            ? 250
                             : screenWidth * 0.1839,
                         height: ResponsiveWidget.isSmallScreen(context)
                             ? 50
@@ -245,7 +247,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                 const SignInPage()));
+                                                const SignInPage()));
                                   });
                                 },
                             ),
