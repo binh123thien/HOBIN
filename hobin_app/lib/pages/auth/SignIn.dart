@@ -126,14 +126,14 @@ class _SignInPageState extends State<SignInPage> {
                               //con mat
                               suffixIcon: IconButton(
                                 onPressed: () {
-                                      setState(() {
-                                        showpass = !showpass;
-                                      });
-                                    },
+                                  setState(() {
+                                    showpass = !showpass;
+                                  });
+                                },
                                 icon: Image(
                                   image: showpass
                                       ? const AssetImage(AppIcons.hiddenEye)
-                                      : const AssetImage(AppIcons.Eye),
+                                      : const AssetImage(AppIcons.eye),
                                 ),
                               ),
                               //o khoa
