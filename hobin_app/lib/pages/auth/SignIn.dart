@@ -123,6 +123,7 @@ class _SignInPageState extends State<SignInPage> {
                             obscureText: showpass,
                             decoration: InputDecoration(
                               border: InputBorder.none,
+                              //con mat
                               suffixIcon: IconButton(
                                 onPressed: () {
                                       setState(() {
@@ -135,6 +136,7 @@ class _SignInPageState extends State<SignInPage> {
                                       : const AssetImage(AppIcons.Eye),
                                 ),
                               ),
+                              //o khoa
                               prefixIcon: const IconButton(
                                 onPressed: null,
                                 icon: Image(
@@ -206,7 +208,7 @@ class _SignInPageState extends State<SignInPage> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                SignUpPage()));
+                                                const SignUpPage()));
                                   });
                                 },
                             ),

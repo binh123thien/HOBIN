@@ -5,6 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hobin_app/common_object/app_colors.dart';
 import 'package:hobin_app/responsive_widget.dart';
 import '../../common_object/app_icons.dart';
+//chuyen trang
+import 'package:flutter/gestures.dart';
+import 'package:hobin_app/pages/auth/SignIn.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -46,6 +49,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                     ),
               //khi chạy full màn hình web
+              //===========================TITTLE============================
               Expanded(
                 child: Column(
                   children: [
@@ -66,9 +70,10 @@ class _SignUpPageState extends State<SignUpPage> {
                           color: AppColors.purpleColor,
                           fontWeight: FontWeight.w400),
                     ),
+                    // ======================USERNAME===========================
                     Padding(
                       padding: ResponsiveWidget.isSmallScreen(context)
-                          ? const EdgeInsets.fromLTRB(30, 20, 30, 0)
+                          ? const EdgeInsets.fromLTRB(30, 50, 30, 0)
                           : const EdgeInsets.fromLTRB(60, 20, 60, 0),
                       child: Container(
                         height: 50.0,
@@ -92,7 +97,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               contentPadding: EdgeInsets.only(top: 14),
                               hintText: 'Username',
                               hintStyle: TextStyle(
-                                fontSize: 16,
+                                fontSize: 17,
                                 color: AppColors.hintColor,
                                 fontFamily: 'poppins',
                               ),
@@ -129,7 +134,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               contentPadding: EdgeInsets.only(top: 14),
                               hintText: 'Email',
                               hintStyle: TextStyle(
-                                fontSize: 16,
+                                fontSize: 17,
                                 color: AppColors.hintColor,
                                 fontFamily: 'poppins',
                               ),
@@ -150,48 +155,99 @@ class _SignUpPageState extends State<SignUpPage> {
                           borderRadius: BorderRadius.circular(50.0),
                           color: AppColors.grayClolor,
                         ),
-                        child: Stack(
-                          alignment: AlignmentDirectional.centerEnd,
-                          children: [
-                            TextFormField(
-                              decoration: const InputDecoration(
-                                border: InputBorder.none,
-                                prefixIcon: IconButton(
-                                  onPressed: null,
-                                  icon: Image(
-                                    image: AssetImage(AppIcons.padLockIcon),
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                                contentPadding: EdgeInsets.only(top: 14),
-                                hintText: 'Password',
-                                hintStyle: TextStyle(
-                                  fontSize: 16,
-                                  color: AppColors.hintColor,
-                                  fontFamily: 'poppins',
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.fromLTRB(0, 10, 10, 0),
-                              child: TextFormField(
-                                obscureText: showpass,
-                                decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  suffixIcon: IconButton(
-                                    onPressed: () {
+                        child: Container(
+                          margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                          child: TextFormField(
+                            obscureText: showpass,
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              //con mat
+                              suffixIcon: IconButton(
+                                onPressed: () {
                                       setState(() {
                                         showpass = !showpass;
                                       });
                                     },
-                                    icon: Image(
-                                      image: showpass
-                                          ? AssetImage(AppIcons.hiddenEye)
-                                          : AssetImage(AppIcons.Eye),
-                                    ),
-                                  ),
+                                icon: Image(
+                                  image: showpass
+                                      ? const AssetImage(AppIcons.hiddenEye)
+                                      : const AssetImage(AppIcons.Eye),
                                 ),
                               ),
+                              //o khoa
+                              prefixIcon: const IconButton(
+                                onPressed: null,
+                                icon: Image(
+                                  image: AssetImage(AppIcons.padLockIcon),
+                                  fit: BoxFit.fill,
+                                  width: 27,
+                                ),
+                              ),
+                              contentPadding: const EdgeInsets.only(top: 14),
+                              hintText: 'Password',
+                              hintStyle: const TextStyle(
+                                fontSize: 17,
+                                color: AppColors.hintColor,
+                                fontFamily: 'poppins',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    //====================SIGN UP=============================
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(30, 60, 30, 30),
+                      child: SizedBox(
+                        width: ResponsiveWidget.isSmallScreen(context)? 250
+                            : screenWidth * 0.1839,
+                        height: ResponsiveWidget.isSmallScreen(context)
+                            ? 50
+                            : screenHeight * 0.089,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: AppColors.purpleColor,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(50),
+                              )),
+                          child: Text('SIGNUP',
+                              style: GoogleFonts.poppins(
+                                  fontSize: 20,
+                                  color: AppColors.whiteColor,
+                                  fontWeight: FontWeight.w600)),
+                        ),
+                      ),
+                    ),
+                    //========================TITTLE DOWN========================
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(30, 30, 30, 30),
+                      child: RichText(
+                        text: TextSpan(
+                          text: 'Do you already have an account?',
+                          style: GoogleFonts.poppins(
+                            fontSize: 16,
+                            color: AppColors.textColor,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          children: [
+                            TextSpan(
+                              text: ' Sign In',
+                              style: GoogleFonts.poppins(
+                                  fontSize: 16,
+                                  color: AppColors.purpleColor,
+                                  fontWeight: FontWeight.w600),
+                              //chuyển trang
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  setState(() {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                 const SignInPage()));
+                                  });
+                                },
                             ),
                           ],
                         ),
