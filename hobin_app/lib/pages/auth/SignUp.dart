@@ -27,6 +27,7 @@ class _SignUpPageState extends State<SignUpPage> {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SizedBox(
         height: screenHeight,
         width: screenWidth,
