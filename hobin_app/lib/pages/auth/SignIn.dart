@@ -161,7 +161,7 @@ class _SignInPageState extends State<SignInPage> {
                     //====================Checkbox Remember===================
                     Padding(
                       padding: ResponsiveWidget.isSmallScreen(context)
-                          ? const EdgeInsets.fromLTRB(30, 20, 30, 0)
+                          ? const EdgeInsets.fromLTRB(30, 5, 30, 0)
                           : const EdgeInsets.fromLTRB(60, 20, 60, 0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -169,43 +169,45 @@ class _SignInPageState extends State<SignInPage> {
                           Row(
                             children: [
                               Checkbox(
+                                  checkColor: Colors.white,
+                                  activeColor: AppColors.purpleColor,
                                   value: checkBoxRemember,
                                   onChanged: (bool? value) {
                                     setState(() {
                                       checkBoxRemember = value!;
                                     });
                                   }),
-                              Text('1'),
-                              Text('22222222222222'),
+                              Text(
+                                'Remember',
+                                style: GoogleFonts.poppins(
+                                  fontSize: 16,
+                                  color: AppColors.textColor,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
                             ],
                           ),
+                          //=================FORGOT PASSWORD==================
                           RichText(
-                              text: TextSpan(
-                            text: 'Forgot PassWord?',
-                            style: GoogleFonts.poppins(
-                              fontSize: 17,
-                              color: AppColors.textColor,
-                              fontWeight: FontWeight.w500,
+                            text: TextSpan(
+                              text: 'Forgot PassWord?',
+                              style: GoogleFonts.poppins(
+                                fontSize: 16,
+                                color: AppColors.textColor,
+                                fontWeight: FontWeight.w500,
+                              ),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  setState(() {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const SignUpPage()));
+                                  });
+                                },
                             ),
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () {
-                                setState(() {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const SignUpPage()));
-                                });
-                              },
-                          )),
-                          // Text(
-                          //   'Forgot PassWord?',
-                          //   style: GoogleFonts.poppins(
-                          //     fontSize: 17,
-                          //     color: AppColors.textColor,
-                          //     fontWeight: FontWeight.w500,
-                          //   ),
-                          // ),
+                          ),
                         ],
                       ),
                     ),

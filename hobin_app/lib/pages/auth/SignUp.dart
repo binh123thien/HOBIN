@@ -20,6 +20,8 @@ class _SignUpPageState extends State<SignUpPage> {
   //khai báo trên override có thể thay đổi biến showpass
   //khai báo con mắt
   bool showpass = false;
+  //khai bao checkbox i agree
+  bool checkBoxIagree = false;
   @override
   // khai báo dưới override biến ko thay đổi
   Widget build(BuildContext context) {
@@ -93,6 +95,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 icon: Image(
                                   image: AssetImage(AppIcons.userIcon),
                                   fit: BoxFit.fill,
+                                  width: 27,
                                 ),
                               ),
                               contentPadding: EdgeInsets.only(top: 14),
@@ -130,6 +133,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 icon: Image(
                                   image: AssetImage(AppIcons.emailIcon),
                                   fit: BoxFit.fill,
+                                  width: 27,
                                 ),
                               ),
                               contentPadding: EdgeInsets.only(top: 14),
@@ -194,6 +198,33 @@ class _SignUpPageState extends State<SignUpPage> {
                             ),
                           ),
                         ),
+                      ),
+                    ),
+                    Padding(
+                      padding: ResponsiveWidget.isSmallScreen(context)
+                          ? const EdgeInsets.fromLTRB(30, 5, 30, 0)
+                          : const EdgeInsets.fromLTRB(60, 20, 60, 0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Checkbox(
+                              checkColor: Colors.white,
+                              activeColor: AppColors.purpleColor,
+                              value: checkBoxIagree,
+                              onChanged: (bool? value) {
+                                setState(() {
+                                  checkBoxIagree = value!;
+                                });
+                              }),
+                          Text(
+                            "I agree to the company's terms",
+                            style: GoogleFonts.poppins(
+                              fontSize: 16,
+                              color: AppColors.textColor,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     //====================SIGN UP=============================
