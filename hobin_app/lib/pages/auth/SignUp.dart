@@ -60,7 +60,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     Text(
                       'ĐĂNG KÝ',
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.poppins(
+                      style: GoogleFonts.roboto(
                           fontSize: 40,
                           color: AppColors.purpleColor,
                           fontWeight: FontWeight.w600),
@@ -68,7 +68,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     Text(
                       'Chào mừng đến với HOBIN',
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.poppins(
+                      style: GoogleFonts.roboto(
                           fontSize: 20,
                           color: AppColors.purpleColor,
                           fontWeight: FontWeight.w400),
@@ -103,7 +103,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               hintStyle: TextStyle(
                                 fontSize: 17,
                                 color: AppColors.hintColor,
-                                fontFamily: 'poppins',
+                                fontFamily: 'roboto',
                               ),
                             ),
                           ),
@@ -141,7 +141,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               hintStyle: TextStyle(
                                 fontSize: 17,
                                 color: AppColors.hintColor,
-                                fontFamily: 'poppins',
+                                fontFamily: 'roboto',
                               ),
                             ),
                           ),
@@ -193,7 +193,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               hintStyle: const TextStyle(
                                 fontSize: 17,
                                 color: AppColors.hintColor,
-                                fontFamily: 'poppins',
+                                fontFamily: 'roboto',
                               ),
                             ),
                           ),
@@ -245,7 +245,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               hintStyle: const TextStyle(
                                 fontSize: 17,
                                 color: AppColors.hintColor,
-                                fontFamily: 'poppins',
+                                fontFamily: 'roboto',
                               ),
                             ),
                           ),
@@ -271,7 +271,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               }),
                           Text(
                             "Tôi đồng ý với chính sách công ty",
-                            style: GoogleFonts.poppins(
+                            style: GoogleFonts.roboto(
                               fontSize: 16,
                               color: AppColors.textColor,
                               fontWeight: FontWeight.w500,
@@ -298,7 +298,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 borderRadius: BorderRadius.circular(50),
                               )),
                           child: Text('Đăng Ký',
-                              style: GoogleFonts.poppins(
+                              style: GoogleFonts.roboto(
                                   fontSize: 20,
                                   color: AppColors.whiteColor,
                                   fontWeight: FontWeight.w600)),
@@ -311,15 +311,15 @@ class _SignUpPageState extends State<SignUpPage> {
                       child: RichText(
                         text: TextSpan(
                           text: 'Bạn đã có tài khoản?',
-                          style: GoogleFonts.poppins(
+                          style: GoogleFonts.roboto(
                             fontSize: 16,
                             color: AppColors.textColor,
                             fontWeight: FontWeight.w500,
                           ),
                           children: [
                             TextSpan(
-                              text: ' Đăng nhập',
-                              style: GoogleFonts.poppins(
+                              text: 'Đăng nhập',
+                              style: GoogleFonts.roboto(
                                   fontSize: 16,
                                   color: AppColors.purpleColor,
                                   fontWeight: FontWeight.w600),
