@@ -61,7 +61,7 @@ class _SignInPageState extends State<SignInPage> {
                       style: GoogleFonts.roboto(
                           fontSize: 40,
                           color: AppColors.purpleColor,
-                          fontWeight: FontWeight.w600),
+                          fontWeight: FontWeight.w900),
                     ),
                     Text(
                       'Chào mừng đến với HOBIN',
@@ -69,61 +69,61 @@ class _SignInPageState extends State<SignInPage> {
                       style: GoogleFonts.roboto(
                           fontSize: 20,
                           color: AppColors.purpleColor,
-                          fontWeight: FontWeight.w400),
+                          fontWeight: FontWeight.w500),
                     ),
                     //====================USER NAME===========================
                     Padding(
                       padding: ResponsiveWidget.isSmallScreen(context)
                           ? const EdgeInsets.fromLTRB(30, 50, 30, 0)
                           : const EdgeInsets.fromLTRB(60, 20, 60, 0),
-                      child: Container(
-                        margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                        child: Form(
-                          //bat loi form
-                          key: _formKey,
-                          child: TextFormField(
-                            //dieu kien bat loi form
-                            validator: (value) {
-                              if (value!.isNotEmpty) {
-                                return null;
-                              } else {
-                                return 'Vui lòng nhập SDT';
-                              }
-                            },
-                            decoration: InputDecoration(
-                              fillColor: AppColors.grayClolor,
-                              filled: true,
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: AppColors.grayClolor),
-                                borderRadius: BorderRadius.circular(50),
+                      child: Form(
+                        //bat loi form
+                        key: _formKey,
+                        child: TextFormField(
+                          //dieu kien bat loi form
+                          validator: (value) {
+                            if (value!.isNotEmpty) {
+                              return null;
+                            } else {
+                              return 'Vui lòng nhập SDT';
+                            }
+                          },
+                          decoration: InputDecoration(
+                            fillColor: AppColors.grayClolor,
+                            filled: true,
+                            enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                  const BorderSide(color: AppColors.grayClolor),
+                              borderRadius: BorderRadius.circular(50),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: AppColors.purpleColor, width: 2),
+                              borderRadius: BorderRadius.circular(50.0),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: AppColors.grayClolor, width: 2),
+                              borderRadius: BorderRadius.circular(50.0),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: Color.fromARGB(255, 255, 0, 0),
+                                  width: 2),
+                              borderRadius: BorderRadius.circular(50.0),
+                            ),
+                            prefixIcon: const IconButton(
+                              onPressed: null,
+                              icon: Image(
+                                image: AssetImage(AppIcons.phoneIcon),
+                                fit: BoxFit.fill,
+                                width: 27,
                               ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: AppColors.purpleColor, width: 2),
-                                borderRadius: BorderRadius.circular(50.0),
-                              ),
-                              errorBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: AppColors.grayClolor, width: 2),
-                                borderRadius: BorderRadius.circular(50.0),
-                              ),
-                              focusedErrorBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: Color.fromARGB(255, 255, 0, 0),
-                                    width: 2),
-                                borderRadius: BorderRadius.circular(50.0),
-                              ),
-                              prefixIcon: const IconButton(
-                                onPressed: null,
-                                icon: Image(
-                                  image: AssetImage(AppIcons.phoneIcon),
-                                  fit: BoxFit.fill,
-                                  width: 27,
-                                ),
-                              ),
-                              contentPadding: const EdgeInsets.only(top: 14),
-                              labelText: 'Số điện thoại',
+                            ),
+                            contentPadding: const EdgeInsets.only(top: 14),
+                            labelText: 'Số điện thoại',
+                            labelStyle: const TextStyle(
+                              fontFamily: 'roboto',
                             ),
                           ),
                         ),
@@ -141,41 +141,58 @@ class _SignInPageState extends State<SignInPage> {
                           borderRadius: BorderRadius.circular(50.0),
                           color: AppColors.grayClolor,
                         ),
-                        child: Container(
-                          margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                          child: TextFormField(
-                            obscureText: showpass,
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
-                              //con mat
-                              suffixIcon: IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    showpass = !showpass;
-                                  });
-                                },
-                                icon: Image(
-                                  image: showpass
-                                      ? const AssetImage(AppIcons.hiddenEye)
-                                      : const AssetImage(AppIcons.eye),
-                                ),
+                        child: TextFormField(
+                          obscureText: showpass,
+                          decoration: InputDecoration(
+                            fillColor: AppColors.grayClolor,
+                            filled: true,
+                            enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                  const BorderSide(color: AppColors.grayClolor),
+                              borderRadius: BorderRadius.circular(50),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: AppColors.purpleColor, width: 2),
+                              borderRadius: BorderRadius.circular(50.0),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: AppColors.grayClolor, width: 2),
+                              borderRadius: BorderRadius.circular(50.0),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: Color.fromARGB(255, 255, 0, 0),
+                                  width: 2),
+                              borderRadius: BorderRadius.circular(50.0),
+                            ),
+                            //con mat
+                            suffixIcon: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  showpass = !showpass;
+                                });
+                              },
+                              icon: Image(
+                                image: showpass
+                                    ? const AssetImage(AppIcons.hiddenEye)
+                                    : const AssetImage(AppIcons.eye),
                               ),
-                              //o khoa
-                              prefixIcon: const IconButton(
-                                onPressed: null,
-                                icon: Image(
-                                  image: AssetImage(AppIcons.padLockIcon),
-                                  fit: BoxFit.fill,
-                                  width: 27,
-                                ),
+                            ),
+                            //o khoa
+                            prefixIcon: const IconButton(
+                              onPressed: null,
+                              icon: Image(
+                                image: AssetImage(AppIcons.padLockIcon),
+                                fit: BoxFit.fill,
+                                width: 27,
                               ),
-                              contentPadding: const EdgeInsets.only(top: 14),
-                              hintText: 'Mật khẩu',
-                              hintStyle: const TextStyle(
-                                fontSize: 17,
-                                color: AppColors.hintColor,
-                                fontFamily: 'roboto',
-                              ),
+                            ),
+                            contentPadding: const EdgeInsets.only(top: 14),
+                            labelText: 'Mật khẩu',
+                            labelStyle: const TextStyle(
+                              fontFamily: 'roboto',
                             ),
                           ),
                         ),
