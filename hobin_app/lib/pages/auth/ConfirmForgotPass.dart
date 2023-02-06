@@ -62,7 +62,7 @@ class _ConfirmForgotPassState extends State<ConfirmForgotPass> {
                         style: GoogleFonts.roboto(
                             fontSize: 30,
                             color: AppColors.purpleColor,
-                            fontWeight: FontWeight.w600),
+                            fontWeight: FontWeight.w900),
                       ),
                     ),
                     Padding(

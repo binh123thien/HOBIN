@@ -11,8 +11,6 @@ import 'package:hobin_app/pages/auth/ForgotPass.dart';
 
 import '../../common_object/app_icons.dart';
 
-bool isHover = false;
-
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
 
@@ -21,6 +19,7 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
+  final _formKey = GlobalKey<FormState>();
   bool showpass = false;
   bool checkBoxRemember = false;
   @override
@@ -78,25 +77,44 @@ class _SignInPageState extends State<SignInPage> {
                           ? const EdgeInsets.fromLTRB(30, 50, 30, 0)
                           : const EdgeInsets.fromLTRB(60, 20, 60, 0),
                       child: Container(
-                        height: 50.0,
-                        width: screenWidth,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50.0),
-                          color: AppColors.grayClolor,
-                        ),
-                        child: Container(
-                          margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                        margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                        child: Form(
+                          //bat loi form
+                          key: _formKey,
                           child: TextFormField(
+                            //dieu kien bat loi form
+                            validator: (value) {
+                              if (value!.isNotEmpty) {
+                                return null;
+                              } else {
+                                return 'Vui lòng nhập SDT';
+                              }
+                            },
                             decoration: InputDecoration(
+                              fillColor: AppColors.grayClolor,
+                              filled: true,
                               enabledBorder: OutlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: AppColors.grayClolor)),
+                                borderSide: const BorderSide(
+                                    color: AppColors.grayClolor),
+                                borderRadius: BorderRadius.circular(50),
+                              ),
                               focusedBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: AppColors.purpleColor),
+                                borderSide: const BorderSide(
+                                    color: AppColors.purpleColor, width: 2),
                                 borderRadius: BorderRadius.circular(50.0),
                               ),
-                              prefixIcon: IconButton(
+                              errorBorder: OutlineInputBorder(
+                                borderSide: const BorderSide(
+                                    color: AppColors.grayClolor, width: 2),
+                                borderRadius: BorderRadius.circular(50.0),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: const BorderSide(
+                                    color: Color.fromARGB(255, 255, 0, 0),
+                                    width: 2),
+                                borderRadius: BorderRadius.circular(50.0),
+                              ),
+                              prefixIcon: const IconButton(
                                 onPressed: null,
                                 icon: Image(
                                   image: AssetImage(AppIcons.phoneIcon),
@@ -104,13 +122,8 @@ class _SignInPageState extends State<SignInPage> {
                                   width: 27,
                                 ),
                               ),
-                              contentPadding: EdgeInsets.only(top: 14),
-                              hintText: 'Số điện thoại',
-                              hintStyle: TextStyle(
-                                fontSize: 17,
-                                color: AppColors.hintColor,
-                                fontFamily: 'roboto',
-                              ),
+                              contentPadding: const EdgeInsets.only(top: 14),
+                              labelText: 'Số điện thoại',
                             ),
                           ),
                         ),
@@ -232,7 +245,11 @@ class _SignInPageState extends State<SignInPage> {
                             ? 50
                             : screenHeight * 0.089,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            if (!_formKey.currentState!.validate()) {
+                              return;
+                            }
+                          },
                           style: ElevatedButton.styleFrom(
                               backgroundColor: AppColors.purpleColor,
                               shape: RoundedRectangleBorder(
