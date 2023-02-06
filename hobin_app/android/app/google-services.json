@@ -37,6 +37,13 @@
             {
               "client_id": "347156798890-deqog0g1i60rpgo4b78k34qs73c6suvb.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "347156798890-mb5e4385avqdesvhkomgc4av73li754e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.hobinApp"
+              }
             }
           ]
         }
