@@ -20,6 +20,7 @@ class _SignUpPageState extends State<SignUpPage> {
   //khai báo trên override có thể thay đổi biến showpass
   //khai báo con mắt
   bool showpass = false;
+  bool conf_showpass = false;
   //khai bao checkbox i agree
   bool checkBoxIagree = false;
   @override
@@ -215,18 +216,18 @@ class _SignUpPageState extends State<SignUpPage> {
                         child: Container(
                           margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                           child: TextFormField(
-                            obscureText: showpass,
+                            obscureText: conf_showpass,
                             decoration: InputDecoration(
                               border: InputBorder.none,
                               //con mat
                               suffixIcon: IconButton(
                                 onPressed: () {
                                   setState(() {
-                                    showpass = !showpass;
+                                    conf_showpass = !conf_showpass;
                                   });
                                 },
                                 icon: Image(
-                                  image: showpass
+                                  image: conf_showpass
                                       ? const AssetImage(AppIcons.hiddenEye)
                                       : const AssetImage(AppIcons.eye),
                                 ),

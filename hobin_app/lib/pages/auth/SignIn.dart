@@ -77,40 +77,39 @@ class _SignInPageState extends State<SignInPage> {
                       padding: ResponsiveWidget.isSmallScreen(context)
                           ? const EdgeInsets.fromLTRB(30, 50, 30, 0)
                           : const EdgeInsets.fromLTRB(60, 20, 60, 0),
-                      child: MouseRegion(
-                        onEnter: (_) => setState(() => isHover = true),
-                        onExit: (_) => setState(() => isHover = false),
+                      child: Container(
+                        height: 50.0,
+                        width: screenWidth,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50.0),
+                          color: AppColors.grayClolor,
+                        ),
                         child: Container(
-                          height: 50.0,
-                          width: screenWidth,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color:
-                                  isHover ? Colors.black : AppColors.grayClolor,
-                            ),
-                            borderRadius: BorderRadius.circular(50.0),
-                            color: AppColors.grayClolor,
-                          ),
-                          child: Container(
-                            margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                            child: TextFormField(
-                              decoration: const InputDecoration(
-                                border: InputBorder.none,
-                                prefixIcon: IconButton(
-                                  onPressed: null,
-                                  icon: Image(
-                                    image: AssetImage(AppIcons.phoneIcon),
-                                    fit: BoxFit.fill,
-                                    width: 27,
-                                  ),
+                          margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide:
+                                      BorderSide(color: AppColors.grayClolor)),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: AppColors.purpleColor),
+                                borderRadius: BorderRadius.circular(50.0),
+                              ),
+                              prefixIcon: IconButton(
+                                onPressed: null,
+                                icon: Image(
+                                  image: AssetImage(AppIcons.phoneIcon),
+                                  fit: BoxFit.fill,
+                                  width: 27,
                                 ),
-                                contentPadding: EdgeInsets.only(top: 14),
-                                hintText: 'Số điện thoại',
-                                hintStyle: TextStyle(
-                                  fontSize: 17,
-                                  color: AppColors.hintColor,
-                                  fontFamily: 'roboto',
-                                ),
+                              ),
+                              contentPadding: EdgeInsets.only(top: 14),
+                              hintText: 'Số điện thoại',
+                              hintStyle: TextStyle(
+                                fontSize: 17,
+                                color: AppColors.hintColor,
+                                fontFamily: 'roboto',
                               ),
                             ),
                           ),
