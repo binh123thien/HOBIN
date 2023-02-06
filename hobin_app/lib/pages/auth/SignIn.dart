@@ -7,6 +7,7 @@ import 'package:hobin_app/common_object/app_colors.dart';
 //chuyển trang
 import 'package:flutter/gestures.dart';
 import 'package:hobin_app/pages/auth/SignUp.dart';
+import 'package:hobin_app/pages/auth/ForgotPass.dart';
 
 import '../../common_object/app_icons.dart';
 
@@ -213,7 +214,7 @@ class _SignInPageState extends State<SignInPage> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                const SignUpPage()));
+                                                const ForgotPass()));
                                   });
                                 },
                             ),

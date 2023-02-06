@@ -6,6 +6,6 @@ void main() {
   runApp(const MaterialApp(
     title: 'Hobin',
     debugShowCheckedModeBanner: false,
-    home: ForgotPass(),
+    home: SignInPage(),
   ));
 }
