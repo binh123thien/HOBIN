@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "347156798890",
+    "project_id": "hobin-46b56",
+    "storage_bucket": "hobin-46b56.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:347156798890:android:226dfcd506895326171fd3",
+        "android_client_info": {
+          "package_name": "com.example.hobin_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "347156798890-e6nbmr5qodah494qdjl05lbf1ri0noor.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hobin_app",
+            "certificate_hash": "7255e696460cc6663a23ab40e280d158ad676f3e"
+          }
+        },
+        {
+          "client_id": "347156798890-deqog0g1i60rpgo4b78k34qs73c6suvb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtpRv70TgK0FhOKEpqHYRZUSkKDDJZPqw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "347156798890-deqog0g1i60rpgo4b78k34qs73c6suvb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
