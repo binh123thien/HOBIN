@@ -58,7 +58,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   children: [
                     SizedBox(height: screenHeight * 0.1435),
                     Text(
-                      'USER SIGNUP',
+                      'ĐĂNG KÝ',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
                           fontSize: 40,
@@ -66,7 +66,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           fontWeight: FontWeight.w600),
                     ),
                     Text(
-                      'Welcome to HOBIN',
+                      'Chào mừng đến với HOBIN',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
                           fontSize: 20,
@@ -99,7 +99,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 ),
                               ),
                               contentPadding: EdgeInsets.only(top: 14),
-                              hintText: 'Username',
+                              hintText: 'Tên người dùng',
                               hintStyle: TextStyle(
                                 fontSize: 17,
                                 color: AppColors.hintColor,
@@ -131,13 +131,13 @@ class _SignUpPageState extends State<SignUpPage> {
                               prefixIcon: IconButton(
                                 onPressed: null,
                                 icon: Image(
-                                  image: AssetImage(AppIcons.emailIcon),
+                                  image: AssetImage(AppIcons.phoneIcon),
                                   fit: BoxFit.fill,
                                   width: 27,
                                 ),
                               ),
                               contentPadding: EdgeInsets.only(top: 14),
-                              hintText: 'Email',
+                              hintText: 'Số điện thoại',
                               hintStyle: TextStyle(
                                 fontSize: 17,
                                 color: AppColors.hintColor,
@@ -189,7 +189,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 ),
                               ),
                               contentPadding: const EdgeInsets.only(top: 14),
-                              hintText: 'Password',
+                              hintText: 'Mật khẩu',
                               hintStyle: const TextStyle(
                                 fontSize: 17,
                                 color: AppColors.hintColor,
@@ -200,6 +200,59 @@ class _SignUpPageState extends State<SignUpPage> {
                         ),
                       ),
                     ),
+                    //=============== Confirm Password =======================
+                    Padding(
+                      padding: ResponsiveWidget.isSmallScreen(context)
+                          ? const EdgeInsets.fromLTRB(30, 20, 30, 0)
+                          : const EdgeInsets.fromLTRB(60, 20, 60, 0),
+                      child: Container(
+                        height: 50.0,
+                        width: screenWidth,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50.0),
+                          color: AppColors.grayClolor,
+                        ),
+                        child: Container(
+                          margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                          child: TextFormField(
+                            obscureText: showpass,
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              //con mat
+                              suffixIcon: IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    showpass = !showpass;
+                                  });
+                                },
+                                icon: Image(
+                                  image: showpass
+                                      ? const AssetImage(AppIcons.hiddenEye)
+                                      : const AssetImage(AppIcons.eye),
+                                ),
+                              ),
+                              //o khoa
+                              prefixIcon: const IconButton(
+                                onPressed: null,
+                                icon: Image(
+                                  image: AssetImage(AppIcons.padLockIcon),
+                                  fit: BoxFit.fill,
+                                  width: 27,
+                                ),
+                              ),
+                              contentPadding: const EdgeInsets.only(top: 14),
+                              hintText: 'Xác nhận mật khẩu',
+                              hintStyle: const TextStyle(
+                                fontSize: 17,
+                                color: AppColors.hintColor,
+                                fontFamily: 'poppins',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    //=========================== đồng ý chính sách =============================
                     Padding(
                       padding: ResponsiveWidget.isSmallScreen(context)
                           ? const EdgeInsets.fromLTRB(30, 5, 30, 0)
@@ -217,7 +270,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 });
                               }),
                           Text(
-                            "I agree to the company's terms",
+                            "Tôi đồng ý với chính sách công ty",
                             style: GoogleFonts.poppins(
                               fontSize: 16,
                               color: AppColors.textColor,
@@ -244,7 +297,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(50),
                               )),
-                          child: Text('SIGNUP',
+                          child: Text('Đăng Ký',
                               style: GoogleFonts.poppins(
                                   fontSize: 20,
                                   color: AppColors.whiteColor,
@@ -257,7 +310,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       padding: const EdgeInsets.fromLTRB(30, 30, 30, 30),
                       child: RichText(
                         text: TextSpan(
-                          text: 'Do you already have an account?',
+                          text: 'Bạn đã có tài khoản?',
                           style: GoogleFonts.poppins(
                             fontSize: 16,
                             color: AppColors.textColor,
@@ -265,7 +318,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           ),
                           children: [
                             TextSpan(
-                              text: ' Sign In',
+                              text: ' Đăng nhập',
                               style: GoogleFonts.poppins(
                                   fontSize: 16,
                                   color: AppColors.purpleColor,

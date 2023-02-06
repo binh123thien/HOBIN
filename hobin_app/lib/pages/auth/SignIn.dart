@@ -54,7 +54,7 @@ class _SignInPageState extends State<SignInPage> {
                   children: [
                     SizedBox(height: screenHeight * 0.1435),
                     Text(
-                      'USER SIGNIN',
+                      'ĐĂNG NHẬP',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
                           fontSize: 40,
@@ -62,7 +62,7 @@ class _SignInPageState extends State<SignInPage> {
                           fontWeight: FontWeight.w600),
                     ),
                     Text(
-                      'Welcome to HOBIN',
+                      'Chào mừng đến với HOBIN',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
                           fontSize: 20,
@@ -89,13 +89,13 @@ class _SignInPageState extends State<SignInPage> {
                               prefixIcon: IconButton(
                                 onPressed: null,
                                 icon: Image(
-                                  image: AssetImage(AppIcons.userIcon),
+                                  image: AssetImage(AppIcons.phoneIcon),
                                   fit: BoxFit.fill,
                                   width: 27,
                                 ),
                               ),
                               contentPadding: EdgeInsets.only(top: 14),
-                              hintText: 'Username',
+                              hintText: 'Số điện thoại',
                               hintStyle: TextStyle(
                                 fontSize: 17,
                                 color: AppColors.hintColor,
@@ -147,7 +147,7 @@ class _SignInPageState extends State<SignInPage> {
                                 ),
                               ),
                               contentPadding: const EdgeInsets.only(top: 14),
-                              hintText: 'Password',
+                              hintText: 'Mật khẩu',
                               hintStyle: const TextStyle(
                                 fontSize: 17,
                                 color: AppColors.hintColor,
@@ -178,7 +178,7 @@ class _SignInPageState extends State<SignInPage> {
                                     });
                                   }),
                               Text(
-                                'Remember',
+                                'Nhớ mật khẩu',
                                 style: GoogleFonts.poppins(
                                   fontSize: 16,
                                   color: AppColors.textColor,
@@ -190,7 +190,7 @@ class _SignInPageState extends State<SignInPage> {
                           //=================FORGOT PASSWORD==================
                           RichText(
                             text: TextSpan(
-                              text: 'Forgot PassWord?',
+                              text: 'Quên mật khẩu?',
                               style: GoogleFonts.poppins(
                                 fontSize: 16,
                                 color: AppColors.textColor,
@@ -228,7 +228,7 @@ class _SignInPageState extends State<SignInPage> {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(50),
                               )),
-                          child: Text('SIGNIN',
+                          child: Text('Đăng Nhập',
                               style: GoogleFonts.poppins(
                                   fontSize: 20,
                                   color: AppColors.whiteColor,
@@ -241,7 +241,7 @@ class _SignInPageState extends State<SignInPage> {
                       padding: const EdgeInsets.fromLTRB(30, 30, 30, 30),
                       child: RichText(
                         text: TextSpan(
-                          text: 'Do not have an account?',
+                          text: 'Bạn chưa có tài khoản?',
                           style: GoogleFonts.poppins(
                             fontSize: 16,
                             color: AppColors.textColor,
@@ -249,7 +249,7 @@ class _SignInPageState extends State<SignInPage> {
                           ),
                           children: [
                             TextSpan(
-                              text: ' Sign Up',
+                              text: ' Đăng kí',
                               style: GoogleFonts.poppins(
                                   fontSize: 16,
                                   color: AppColors.purpleColor,
