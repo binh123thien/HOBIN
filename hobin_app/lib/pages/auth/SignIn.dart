@@ -7,8 +7,11 @@ import 'package:hobin_app/common_object/app_colors.dart';
 //chuyển trang
 import 'package:flutter/gestures.dart';
 import 'package:hobin_app/pages/auth/SignUp.dart';
+import 'package:hobin_app/pages/auth/ForgotPass.dart';
 
 import '../../common_object/app_icons.dart';
+
+bool isHover = false;
 
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -74,32 +77,40 @@ class _SignInPageState extends State<SignInPage> {
                       padding: ResponsiveWidget.isSmallScreen(context)
                           ? const EdgeInsets.fromLTRB(30, 50, 30, 0)
                           : const EdgeInsets.fromLTRB(60, 20, 60, 0),
-                      child: Container(
-                        height: 50.0,
-                        width: screenWidth,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50.0),
-                          color: AppColors.grayClolor,
-                        ),
+                      child: MouseRegion(
+                        onEnter: (_) => setState(() => isHover = true),
+                        onExit: (_) => setState(() => isHover = false),
                         child: Container(
-                          margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                          child: TextFormField(
-                            decoration: const InputDecoration(
-                              border: InputBorder.none,
-                              prefixIcon: IconButton(
-                                onPressed: null,
-                                icon: Image(
-                                  image: AssetImage(AppIcons.phoneIcon),
-                                  fit: BoxFit.fill,
-                                  width: 27,
+                          height: 50.0,
+                          width: screenWidth,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color:
+                                  isHover ? Colors.black : AppColors.grayClolor,
+                            ),
+                            borderRadius: BorderRadius.circular(50.0),
+                            color: AppColors.grayClolor,
+                          ),
+                          child: Container(
+                            margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                            child: TextFormField(
+                              decoration: const InputDecoration(
+                                border: InputBorder.none,
+                                prefixIcon: IconButton(
+                                  onPressed: null,
+                                  icon: Image(
+                                    image: AssetImage(AppIcons.phoneIcon),
+                                    fit: BoxFit.fill,
+                                    width: 27,
+                                  ),
                                 ),
-                              ),
-                              contentPadding: EdgeInsets.only(top: 14),
-                              hintText: 'Số điện thoại',
-                              hintStyle: TextStyle(
-                                fontSize: 17,
-                                color: AppColors.hintColor,
-                                fontFamily: 'roboto',
+                                contentPadding: EdgeInsets.only(top: 14),
+                                hintText: 'Số điện thoại',
+                                hintStyle: TextStyle(
+                                  fontSize: 17,
+                                  color: AppColors.hintColor,
+                                  fontFamily: 'roboto',
+                                ),
                               ),
                             ),
                           ),
@@ -203,7 +214,7 @@ class _SignInPageState extends State<SignInPage> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                const SignUpPage()));
+                                                const ForgotPass()));
                                   });
                                 },
                             ),

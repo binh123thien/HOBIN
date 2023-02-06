@@ -297,7 +297,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(50),
                               )),
-                          child: Text('Đăng Ký',
+                          child: Text(' Đăng Ký',
                               style: GoogleFonts.roboto(
                                   fontSize: 20,
                                   color: AppColors.whiteColor,
@@ -318,7 +318,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           ),
                           children: [
                             TextSpan(
-                              text: 'Đăng nhập',
+                              text: ' Đăng nhập',
                               style: GoogleFonts.roboto(
                                   fontSize: 16,
                                   color: AppColors.purpleColor,
