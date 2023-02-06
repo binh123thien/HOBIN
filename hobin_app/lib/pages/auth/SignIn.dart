@@ -58,7 +58,7 @@ class _SignInPageState extends State<SignInPage> {
                     Text(
                       'ĐĂNG NHẬP',
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.poppins(
+                      style: GoogleFonts.roboto(
                           fontSize: 40,
                           color: AppColors.purpleColor,
                           fontWeight: FontWeight.w600),
@@ -66,7 +66,7 @@ class _SignInPageState extends State<SignInPage> {
                     Text(
                       'Chào mừng đến với HOBIN',
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.poppins(
+                      style: GoogleFonts.roboto(
                           fontSize: 20,
                           color: AppColors.purpleColor,
                           fontWeight: FontWeight.w400),
@@ -108,7 +108,7 @@ class _SignInPageState extends State<SignInPage> {
                                 hintStyle: TextStyle(
                                   fontSize: 17,
                                   color: AppColors.hintColor,
-                                  fontFamily: 'poppins',
+                                  fontFamily: 'roboto',
                                 ),
                               ),
                             ),
@@ -161,7 +161,7 @@ class _SignInPageState extends State<SignInPage> {
                               hintStyle: const TextStyle(
                                 fontSize: 17,
                                 color: AppColors.hintColor,
-                                fontFamily: 'poppins',
+                                fontFamily: 'roboto',
                               ),
                             ),
                           ),
@@ -189,7 +189,7 @@ class _SignInPageState extends State<SignInPage> {
                                   }),
                               Text(
                                 'Nhớ mật khẩu',
-                                style: GoogleFonts.poppins(
+                                style: GoogleFonts.roboto(
                                   fontSize: 16,
                                   color: AppColors.textColor,
                                   fontWeight: FontWeight.w500,
@@ -201,7 +201,7 @@ class _SignInPageState extends State<SignInPage> {
                           RichText(
                             text: TextSpan(
                               text: 'Quên mật khẩu?',
-                              style: GoogleFonts.poppins(
+                              style: GoogleFonts.roboto(
                                 fontSize: 16,
                                 color: AppColors.textColor,
                                 fontWeight: FontWeight.w500,
@@ -239,7 +239,7 @@ class _SignInPageState extends State<SignInPage> {
                                 borderRadius: BorderRadius.circular(50),
                               )),
                           child: Text('Đăng Nhập',
-                              style: GoogleFonts.poppins(
+                              style: GoogleFonts.roboto(
                                   fontSize: 20,
                                   color: AppColors.whiteColor,
                                   fontWeight: FontWeight.w600)),
@@ -252,7 +252,7 @@ class _SignInPageState extends State<SignInPage> {
                       child: RichText(
                         text: TextSpan(
                           text: 'Bạn chưa có tài khoản?',
-                          style: GoogleFonts.poppins(
+                          style: GoogleFonts.roboto(
                             fontSize: 16,
                             color: AppColors.textColor,
                             fontWeight: FontWeight.w500,
@@ -260,7 +260,7 @@ class _SignInPageState extends State<SignInPage> {
                           children: [
                             TextSpan(
                               text: ' Đăng kí',
-                              style: GoogleFonts.poppins(
+                              style: GoogleFonts.roboto(
                                   fontSize: 16,
                                   color: AppColors.purpleColor,
                                   fontWeight: FontWeight.w600),
